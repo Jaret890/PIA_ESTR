@@ -143,7 +143,7 @@ def registrar_reservacion():
         conn.close()
         return
 
-    cursor.execute("INSERT INTO reservaciones (id_cliente, id_sala, fecha, turno, evento) VALUES (?, ?, ?, ?, ?, 'activa')",
+    cursor.execute("INSERT INTO reservaciones (id_cliente, id_sala, fecha, turno, evento, estado) VALUES (?, ?, ?, ?, ?, 'activa')",
                    (id_cliente, id_sala, ts, turno, evento))
     conn.commit()
     rid = cursor.lastrowid
